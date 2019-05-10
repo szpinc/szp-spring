@@ -56,10 +56,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.8.0</version>
                 <configuration>
                     <target>1.8</target>
-                    <resource>1.8</resource>
+                    <source>1.8</source>
                 </configuration>
             </plugin>
             <!-- tomcat7插件 -->

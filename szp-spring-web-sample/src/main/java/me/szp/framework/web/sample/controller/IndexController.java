@@ -1,6 +1,6 @@
 package me.szp.framework.web.sample.controller;
 
-import me.szp.framework.spring.web.annotation.Controller;
+import me.szp.framework.spring.core.annotation.Controller;
 import me.szp.framework.spring.web.annotation.RequestMapping;
 import me.szp.framework.spring.web.annotation.RequestParam;
 

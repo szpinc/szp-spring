@@ -11,6 +11,12 @@
 
     <artifactId>szp-spring-web</artifactId>
     <dependencies>
+
+        <dependency>
+            <groupId>me.szp.framework</groupId>
+            <artifactId>szp-spring-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--junit START-->
         <dependency>
             <groupId>junit</groupId>

@@ -5,13 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Properties;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -20,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
-import me.szp.framework.spring.web.annotation.Controller;
+import me.szp.framework.spring.core.annotation.Controller;
 import me.szp.framework.spring.web.annotation.RequestMapping;
 
 /**
@@ -159,8 +154,12 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void doScanner(String packageName) {
+
+        log.debug("PackageName:[{}]",packageName.replaceAll("\\.", "/"));
         //把所有的.替换成/
         URL url = this.getClass().getClassLoader().getResource("/" + packageName.replaceAll("\\.", "/"));
+
+        log.debug("用户包目录:[{}]",url);
         File dir = new File(url.getFile());
         for (File file : dir.listFiles()) {
             if (file.isDirectory()) {
